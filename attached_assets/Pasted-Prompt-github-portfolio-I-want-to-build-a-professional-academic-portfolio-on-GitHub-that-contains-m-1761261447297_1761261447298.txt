@@ -1,0 +1,38 @@
+Prompt github portfolio 
+I want to build a professional academic portfolio on GitHub that contains my research portfolio, Include an index.html file and any other necessary assets.
+
+Font - helvetica 
+Size 12
+Background color - white 
+Text color - black 
+Hyperlink colors- dark pink ( #A20597 )
+
+Sections 
+Menu section- 
+Top left - Adithya Neelakantan 
+Top right - Resume 
+
+Mains section - 
+Left —  (does not scroll away, it stays fixed) about 30% of the vertical space 
+- Profile photo, in a square - given 
+- City, with a map pin logo - Portland, OR
+- Email adithya.neelakantan@gmail.com, aneelaka@syr.edu 
+- GitHub page https://github.com/adiithyaneelakantan
+- Linkedin https://www.linkedin.com/in/adithyaneelakantan/
+- Instagram - https://www.instagram.com/adithya.neelakantan/
+
+Right — 
+About : 
+Hey, I’m a recent graduate at Syracuse University, with a masters degree in Computer Sciences. I’m a research intern at SU, working on building continually learning and adapting AI agents, to study cognition in Agentic AI systems, how agents think about their reasoning process, adapt and learn from users interactions over time. I’ve also done projects on machine learning, network analysis, natural language processing and computer vision. 
+
+Updates : 
+- June 16, 2025, - Started working on Research project - AI agents with Continual learning
+- May 10, 2025 - graduated from Syracuse University, Masters in CS
+- April 26, 2025 - wrapped up AIOT Smart Classroom Prototype project 
+- December 2, 2024 - completed Mental Health categories project on Reddit data, along with 5 other students,
+- August 23, 2024 - completed 12 week summer internship at Intel
+- August 28, 2023 - Started Masters in CS degree at Syracuse University 
+
+Research vision : 
+My research interests lie at the intersection of Human-Computer Interaction and Computational Communication. I aim to study and design adaptive, human-centered AI systems that augment human decision-making and the cognitive processes guiding it. My approach combines computational methods such as network analysis, text and web mining, data analytics, machine learning, and cognitive modeling. Specifically, I am interested in bridging computational efficiency with metacognitive intelligence—developing intelligent systems that can reflect on their own reasoning processes, much like humans do in real-world decision-making contexts. Through this perspective, I seek to better understand patterns of communication, interactional biases in human-AI dialogue, and the dynamics of collaborative cognition. My long-term goal is to explore how AI can interpret, anticipate, and respond to human behavior, connecting computer science with cognitive and communication principles.
+
