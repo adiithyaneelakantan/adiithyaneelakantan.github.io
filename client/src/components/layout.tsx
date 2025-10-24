@@ -32,14 +32,14 @@ export default function Layout({ children }: LayoutProps) {
       <header className="fixed top-0 left-0 right-0 bg-white z-50 h-[60px]">
         <div className="flex items-center justify-between px-8 h-full">
           <h1 className="text-[1.8rem] font-bold text-[#A20597]" data-testid="text-header-name">
-            Adithya Neelakantan
+            ADITHYA NEELAKANTAN
           </h1>
           <div className="flex items-center gap-8">
             {navItems.map((item) => (
               <Link
                 key={item.path}
                 href={item.path}
-                className={`text-[1.8rem] hover:underline font-medium ${
+                className={`text-[1.2rem] hover:underline font-medium ${
                   location === item.path ? 'text-[#A20597] underline' : 'text-[#A20597]'
                 }`}
                 data-testid={`link-nav-${item.label.toLowerCase().replace(/ /g, '-')}`}
