@@ -80,26 +80,42 @@ function initScrollAnimations() {
     }
     
     const observerOptions = {
-        threshold: 0.1,
-        rootMargin: '0px 0px -50px 0px'
+        threshold: 0.15,
+        rootMargin: '0px 0px -80px 0px'
     };
     
     const observer = new IntersectionObserver(function(entries) {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
-                entry.target.style.opacity = '1';
-                entry.target.style.transform = 'translateY(0)';
+                entry.target.classList.add('visible');
             }
         });
     }, observerOptions);
     
     // Observe all content sections
     const sections = document.querySelectorAll('.content-section');
-    sections.forEach((section, index) => {
-        section.style.opacity = '0';
-        section.style.transform = 'translateY(20px)';
-        section.style.transition = `opacity 0.6s ease ${index * 0.1}s, transform 0.6s ease ${index * 0.1}s`;
+    sections.forEach((section) => {
+        section.classList.add('fade-in-section');
         observer.observe(section);
+    });
+    
+    // Animate individual project and experience items
+    const items = document.querySelectorAll('.project, .experience, .publication, .update-item');
+    const itemObserver = new IntersectionObserver(function(entries) {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+            }
+        });
+    }, {
+        threshold: 0.2,
+        rootMargin: '0px 0px -50px 0px'
+    });
+    
+    items.forEach((item, index) => {
+        item.classList.add('fade-in-item');
+        item.style.transitionDelay = `${(index % 3) * 0.1}s`;
+        itemObserver.observe(item);
     });
 }
 
