@@ -38,7 +38,10 @@ This website is designed to be deployed on GitHub Pages.
 
 ```
 .
-├── index.html              # Main HTML file
+├── index.html              # Main HTML file (Home page)
+├── projects.html           # Academic Projects page
+├── experience.html         # Experience page
+├── .nojekyll              # Prevents Jekyll processing on GitHub Pages
 ├── css/
 │   └── styles.css         # All styling
 ├── js/
@@ -70,19 +73,18 @@ The website uses a specific color scheme defined in `css/styles.css`:
 To change colors, search and replace these hex values in the CSS file.
 
 ### Typography
-The website uses Helvetica font at 12px base size. To change the font:
+The website uses Helvetica font at 18px base size. To change the font:
 1. Open `css/styles.css`
 2. Find the `body` rule
 3. Update the `font-family` property
 
 ### Content
-All content is in `index.html`. Update the sections:
-- About
-- Updates
-- Research Vision
-- Publications
-- Academic Projects
-- Experience
+Content is spread across multiple pages:
+- `index.html` - Home page with About, Updates, Research Vision, and Publications
+- `projects.html` - Academic Projects page
+- `experience.html` - Experience page
+
+Update the sections in their respective HTML files.
 
 ## 📱 Responsive Breakpoints
 
@@ -119,7 +121,7 @@ To view the website locally:
 
 ## 📞 Contact
 
-- Email: adithya.neelakantan@gmail.com
+- Email: adithya.neelakantan2001@gmail.com
 - Email: aneelaka@syr.edu
 - GitHub: [@adiithyaneelakantan](https://github.com/adiithyaneelakantan)
 - LinkedIn: [adithyaneelakantan](https://www.linkedin.com/in/adithyaneelakantan/)

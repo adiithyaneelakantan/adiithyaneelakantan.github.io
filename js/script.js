@@ -6,14 +6,12 @@
 // Wait for DOM to be fully loaded
 document.addEventListener('DOMContentLoaded', function() {
     
-    // Initialize theme
-    initTheme();
+    // Theme toggle removed - using simple top nav
     
     // Smooth scroll for navigation links
     initSmoothScroll();
     
-    // Add scroll behavior for navigation bar
-    initNavbarScroll();
+    // Navbar scroll removed - using simple top nav instead
     
     // Initialize animations
     initScrollAnimations();
@@ -26,40 +24,7 @@ document.addEventListener('DOMContentLoaded', function() {
     
 });
 
-/**
- * Initialize dark mode theme toggle
- */
-function initTheme() {
-    const themeToggle = document.getElementById('theme-toggle');
-    const sunIcon = document.querySelector('.sun-icon');
-    const moonIcon = document.querySelector('.moon-icon');
-    const htmlElement = document.documentElement;
-    
-    // Check for saved theme preference or default to light mode
-    const currentTheme = localStorage.getItem('theme') || 'light';
-    htmlElement.setAttribute('data-theme', currentTheme);
-    
-    // Update icon visibility
-    updateThemeIcons(currentTheme);
-    
-    // Toggle theme on button click
-    themeToggle.addEventListener('click', function() {
-        const newTheme = htmlElement.getAttribute('data-theme') === 'light' ? 'dark' : 'light';
-        htmlElement.setAttribute('data-theme', newTheme);
-        localStorage.setItem('theme', newTheme);
-        updateThemeIcons(newTheme);
-    });
-    
-    function updateThemeIcons(theme) {
-        if (theme === 'dark') {
-            sunIcon.style.display = 'none';
-            moonIcon.style.display = 'block';
-        } else {
-            sunIcon.style.display = 'block';
-            moonIcon.style.display = 'none';
-        }
-    }
-}
+// Theme toggle functionality removed
 
 /**
  * Initialize smooth scrolling for anchor links
@@ -78,7 +43,7 @@ function initSmoothScroll() {
             
             const target = document.querySelector(href);
             if (target) {
-                const offsetTop = target.offsetTop - 80; // Account for fixed navbar
+                const offsetTop = target.offsetTop - 20; // Small offset for top nav
                 window.scrollTo({
                     top: offsetTop,
                     behavior: 'smooth'
@@ -88,26 +53,7 @@ function initSmoothScroll() {
     });
 }
 
-/**
- * Add shadow to navbar on scroll
- */
-function initNavbarScroll() {
-    const navbar = document.querySelector('.navbar');
-    
-    function updateNavbar() {
-        if (window.scrollY > 10) {
-            navbar.style.boxShadow = '0 2px 8px rgba(0, 0, 0, 0.05)';
-        } else {
-            navbar.style.boxShadow = 'none';
-        }
-    }
-    
-    // Initial check
-    updateNavbar();
-    
-    // Update on scroll
-    window.addEventListener('scroll', updateNavbar, { passive: true });
-}
+// Navbar scroll functionality removed
 
 /**
  * Initialize scroll-based animations for content sections
@@ -224,64 +170,7 @@ if (profileImg) {
     });
 }
 
-/**
- * Add copy email functionality
- */
-function initEmailCopy() {
-    const emailLinks = document.querySelectorAll('.contact-link[href^="mailto:"]');
-    
-    emailLinks.forEach(link => {
-        link.addEventListener('click', function(e) {
-            const email = this.textContent.trim();
-            
-            // Try to copy to clipboard
-            if (navigator.clipboard && window.isSecureContext) {
-                e.preventDefault();
-                navigator.clipboard.writeText(email).then(() => {
-                    showCopyNotification(this);
-                });
-            }
-        });
-    });
-}
-
-/**
- * Show notification when email is copied
- */
-function showCopyNotification(element) {
-    const notification = document.createElement('span');
-    notification.textContent = 'Copied!';
-    notification.style.cssText = `
-        position: absolute;
-        background-color: #A20597;
-        color: white;
-        padding: 4px 8px;
-        border-radius: 4px;
-        font-size: 11px;
-        margin-left: 8px;
-        opacity: 0;
-        transition: opacity 0.3s ease;
-    `;
-    
-    element.style.position = 'relative';
-    element.appendChild(notification);
-    
-    // Fade in
-    setTimeout(() => {
-        notification.style.opacity = '1';
-    }, 10);
-    
-    // Fade out and remove
-    setTimeout(() => {
-        notification.style.opacity = '0';
-        setTimeout(() => {
-            notification.remove();
-        }, 300);
-    }, 2000);
-}
-
-// Initialize email copy functionality
-initEmailCopy();
+// Email links now just open mail client - no copy functionality needed
 
 /**
  * Initialize project filtering functionality

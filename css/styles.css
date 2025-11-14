@@ -46,7 +46,7 @@ html {
 
 body {
     font-family: Helvetica, Arial, sans-serif;
-    font-size: 12px;
+    font-size: 16px;
     line-height: 1.6;
     color: var(--text-primary);
     background-color: var(--bg-primary);
@@ -63,6 +63,7 @@ h1, h2, h3, h4, h5, h6 {
     font-weight: bold;
     line-height: 1.3;
     color: var(--text-primary);
+    font-family: Helvetica, Arial, sans-serif;
 }
 
 a {
@@ -82,134 +83,49 @@ a:focus {
 }
 
 /* ========================================
-   Navigation Bar
+   Top Navigation
    ======================================== */
 
-.navbar {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    background-color: var(--bg-primary);
-    border-bottom: 1px solid var(--border-color);
-    z-index: 1000;
-    padding: 16px 0;
-    transition: background-color 0.3s ease, border-color 0.3s ease;
-}
-
-.navbar-content {
+.top-nav {
     max-width: 1400px;
     margin: 0 auto;
-    padding: 0 32px;
+    padding: 32px 32px 24px 32px;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    flex-wrap: wrap;
 }
 
-.navbar-left .site-title {
-    font-size: 18px;
+.top-nav-name {
+    font-size: 28px;
     font-weight: bold;
     color: var(--text-primary);
     text-decoration: none;
-}
-
-.navbar-left .site-title:hover {
-    color: var(--accent-primary);
-}
-
-.navbar-right {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-}
-
-/* Resume Download Section */
-.resume-download {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-end;
-    gap: 2px;
-}
-
-.resume-download .nav-link {
-    font-size: 14px;
-    font-weight: 500;
-    color: var(--accent-primary);
-    text-decoration: none;
-    padding: 8px 16px;
-    border: 1px solid var(--accent-primary);
-    border-radius: 4px;
-    transition: all 0.2s ease;
-    display: flex;
-    align-items: center;
-    gap: 6px;
-}
-
-.resume-download .nav-link:hover {
-    background-color: var(--accent-primary);
-    color: #FFFFFF;
-    opacity: 1;
-}
-
-.resume-download .nav-link:hover .download-icon {
-    color: #FFFFFF;
-}
-
-.download-icon {
-    width: 16px;
-    height: 16px;
-    color: var(--accent-primary);
     transition: color 0.2s ease;
+    text-transform: uppercase;
 }
 
-.resume-version {
-    font-size: 9px;
-    color: var(--text-tertiary);
-    white-space: nowrap;
+.top-nav-name:hover {
+    color: var(--accent-primary);
 }
 
-/* Secondary nav link */
-.nav-link-secondary {
-    font-size: 14px;
-    font-weight: 500;
-    color: var(--text-primary);
-    text-decoration: none;
-    padding: 8px 16px;
-    border-radius: 4px;
-    transition: all 0.2s ease;
-}
-
-.nav-link-secondary:hover {
-    background-color: var(--bg-secondary);
-    opacity: 1;
-}
-
-/* Theme Toggle Button */
-.theme-toggle {
-    background: none;
-    border: none;
-    cursor: pointer;
-    padding: 8px;
+.top-nav-links {
     display: flex;
     align-items: center;
-    justify-content: center;
-    border-radius: 4px;
-    transition: background-color 0.2s ease;
+    gap: 24px;
 }
 
-.theme-toggle:hover {
-    background-color: var(--bg-secondary);
-}
-
-.theme-toggle .theme-icon {
-    width: 20px;
-    height: 20px;
+.top-nav-link {
+    font-size: 28px;
+    font-weight: bold;
     color: var(--text-primary);
-    transition: transform 0.3s ease;
+    text-decoration: none;
+    transition: color 0.2s ease;
+    text-transform: uppercase;
 }
 
-.theme-toggle:hover .theme-icon {
-    transform: rotate(15deg);
+.top-nav-link:hover {
+    color: var(--accent-primary);
 }
 
 /* ========================================
@@ -219,7 +135,7 @@ a:focus {
 .container {
     max-width: 1400px;
     margin: 0 auto;
-    padding-top: 72px;
+    padding-top: 0;
     display: flex;
     gap: 48px;
     padding-left: 32px;
@@ -235,9 +151,9 @@ a:focus {
     min-width: 280px;
     max-width: 380px;
     position: sticky;
-    top: 88px;
+    top: 24px;
     align-self: flex-start;
-    height: calc(100vh - 104px);
+    height: calc(100vh - 48px);
     overflow-y: auto;
 }
 
@@ -281,7 +197,7 @@ a:focus {
     display: flex;
     align-items: center;
     gap: 8px;
-    font-size: 13px;
+    font-size: 16px;
     color: var(--text-primary);
 }
 
@@ -300,7 +216,7 @@ a:focus {
 }
 
 .contact-link {
-    font-size: 12px;
+    font-size: 16px;
     color: var(--accent-primary);
     word-break: break-word;
 }
@@ -309,34 +225,19 @@ a:focus {
 .social-links {
     display: flex;
     flex-direction: column;
-    gap: 12px;
+    gap: 8px;
     margin-top: 8px;
 }
 
 .social-link {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    font-size: 13px;
+    font-size: 16px;
     color: var(--accent-primary);
     text-decoration: none;
-    padding: 8px 12px;
-    border: 1px solid var(--border-color);
-    border-radius: 4px;
-    transition: all 0.2s ease;
+    transition: color 0.2s ease;
 }
 
 .social-link:hover {
-    background-color: var(--bg-secondary);
-    border-color: var(--accent-primary);
-    opacity: 1;
-}
-
-.social-icon {
-    width: 20px;
-    height: 20px;
-    fill: var(--accent-primary);
-    flex-shrink: 0;
+    color: var(--accent-hover);
 }
 
 /* ========================================
@@ -355,63 +256,87 @@ a:focus {
 }
 
 .section-heading {
-    font-size: 20px;
+    font-size: 24px;
     font-weight: bold;
     color: var(--text-primary);
-    margin-bottom: 16px;
-    padding-bottom: 8px;
-    border-bottom: 2px solid var(--accent-primary);
+    margin-bottom: 24px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    font-family: Helvetica, Arial, sans-serif;
 }
 
 .section-text {
-    font-size: 13px;
+    font-size: 16px;
     line-height: 1.7;
     color: var(--text-primary);
-    margin-bottom: 12px;
+    margin-bottom: 20px;
 }
 
 /* ========================================
    Timeline (Updates Section)
    ======================================== */
 
-.timeline {
+.timeline-line {
     display: flex;
     flex-direction: column;
-    gap: 20px;
-}
-
-.timeline-item {
-    display: flex;
-    gap: 16px;
-    padding-left: 8px;
-    border-left: 2px solid var(--border-color);
-    padding-bottom: 8px;
     position: relative;
+    padding-left: 24px;
 }
 
-.timeline-item::before {
+.timeline-line::before {
     content: '';
     position: absolute;
-    left: -6px;
-    top: 6px;
-    width: 10px;
-    height: 10px;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background-color: var(--border-color);
+}
+
+.timeline-item-inline {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 6px;
+    position: relative;
+    padding-bottom: 24px;
+    margin-bottom: 24px;
+}
+
+.timeline-item-inline::before {
+    content: '';
+    position: absolute;
+    left: -30px;
+    top: 8px;
+    width: 12px;
+    height: 12px;
     background-color: var(--accent-primary);
     border-radius: 50%;
+    border: 2px solid var(--bg-primary);
+    z-index: 1;
+}
+
+.timeline-item-inline:last-child {
+    padding-bottom: 0;
+    margin-bottom: 0;
 }
 
 .timeline-date {
-    font-size: 12px;
+    font-size: 16px;
     font-weight: bold;
     color: var(--text-primary);
-    min-width: 120px;
     flex-shrink: 0;
 }
 
+.timeline-separator {
+    display: none;
+}
+
 .timeline-content {
-    font-size: 12px;
+    font-size: 16px;
     line-height: 1.6;
     color: var(--text-primary);
+    padding-left: 0;
 }
 
 /* ========================================
@@ -423,7 +348,7 @@ a:focus {
 }
 
 .publication-text {
-    font-size: 12px;
+    font-size: 16px;
     line-height: 1.7;
     color: var(--text-primary);
 }
@@ -447,8 +372,8 @@ a:focus {
 }
 
 .filter-btn {
-    font-size: 12px;
-    padding: 8px 16px;
+    font-size: 14px;
+    padding: 10px 18px;
     background-color: var(--bg-secondary);
     color: var(--text-secondary);
     border: 1px solid var(--border-color);
@@ -477,9 +402,8 @@ a:focus {
 }
 
 .project {
-    margin-bottom: 32px;
-    padding-bottom: 24px;
-    border-bottom: 1px solid var(--border-color);
+    margin-bottom: 48px;
+    padding-bottom: 36px;
     opacity: 1;
     transform: translateY(0);
     transition: opacity 0.4s ease, transform 0.4s ease;
@@ -490,7 +414,7 @@ a:focus {
 }
 
 .project:last-child {
-    border-bottom: none;
+    padding-bottom: 0;
 }
 
 .project-header {
@@ -503,22 +427,22 @@ a:focus {
 }
 
 .project-title {
-    font-size: 15px;
+    font-size: 24px;
     font-weight: bold;
     color: var(--text-primary);
 }
 
 .project-date {
-    font-size: 11px;
-    color: var(--text-secondary);
+    font-size: 16px;
+    color: var(--accent-primary);
     font-style: italic;
 }
 
 .project-description {
-    font-size: 12px;
+    font-size: 16px;
     line-height: 1.7;
     color: var(--text-primary);
-    margin-bottom: 10px;
+    margin-bottom: 18px;
 }
 
 .project-link-text {
@@ -526,7 +450,7 @@ a:focus {
 }
 
 .project-link {
-    font-size: 12px;
+    font-size: 16px;
     color: var(--accent-primary);
     font-weight: 500;
 }
@@ -536,13 +460,12 @@ a:focus {
    ======================================== */
 
 .experience {
-    margin-bottom: 32px;
-    padding-bottom: 24px;
-    border-bottom: 1px solid var(--border-color);
+    margin-bottom: 48px;
+    padding-bottom: 36px;
 }
 
 .experience:last-child {
-    border-bottom: none;
+    padding-bottom: 0;
 }
 
 .experience-header {
@@ -555,21 +478,21 @@ a:focus {
 }
 
 .experience-title {
-    font-size: 15px;
+    font-size: 24px;
     font-weight: bold;
     color: var(--text-primary);
-    margin-bottom: 4px;
+    margin-bottom: 9px;
 }
 
 .experience-company {
-    font-size: 13px;
+    font-size: 16px;
     color: var(--text-primary);
-    font-weight: 500;
+    font-weight: bold;
 }
 
 .experience-date {
-    font-size: 11px;
-    color: var(--text-secondary);
+    font-size: 16px;
+    color: var(--accent-primary);
     font-style: italic;
     flex-shrink: 0;
 }
@@ -579,11 +502,11 @@ a:focus {
     margin-left: 20px;
     display: flex;
     flex-direction: column;
-    gap: 8px;
+    gap: 15px;
 }
 
 .experience-list li {
-    font-size: 12px;
+    font-size: 16px;
     line-height: 1.7;
     color: var(--text-primary);
     padding-left: 4px;
@@ -601,7 +524,7 @@ a:focus {
 }
 
 .footer p {
-    font-size: 11px;
+    font-size: 16px;
     color: var(--text-secondary);
 }
 
@@ -610,41 +533,30 @@ a:focus {
    ======================================== */
 
 @media (max-width: 768px) {
-    .navbar-content {
-        padding: 0 20px;
+    .top-nav {
+        padding: 24px 20px 20px 20px;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 16px;
     }
 
-    .navbar-left .site-title {
-        font-size: 16px;
+    .top-nav-name {
+        font-size: 22px;
     }
 
-    .navbar-right {
-        gap: 8px;
+    .top-nav-links {
+        gap: 16px;
     }
 
-    .resume-download .nav-link {
-        font-size: 12px;
-        padding: 6px 12px;
-    }
-
-    .resume-version {
-        font-size: 8px;
-    }
-
-    .theme-toggle {
-        padding: 6px;
-    }
-
-    .theme-toggle .theme-icon {
-        width: 18px;
-        height: 18px;
+    .top-nav-link {
+        font-size: 22px;
     }
 
     .container {
         flex-direction: column;
         padding-left: 20px;
         padding-right: 20px;
-        padding-top: 80px;
+        padding-top: 0;
         gap: 32px;
     }
 
@@ -681,7 +593,7 @@ a:focus {
     }
 
     .section-heading {
-        font-size: 18px;
+        font-size: 20px;
     }
 
     .timeline-item {
@@ -705,11 +617,6 @@ a:focus {
    ======================================== */
 
 @media print {
-    .navbar {
-        position: static;
-        border-bottom: none;
-    }
-
     .container {
         padding-top: 0;
     }
@@ -784,16 +691,11 @@ a:focus {
 
 /* High contrast mode support */
 @media (prefers-contrast: high) {
-    .navbar {
-        border-bottom-width: 2px;
-    }
-
     .section-heading {
         border-bottom-width: 3px;
     }
 
-    .social-link,
-    .navbar-right .nav-link {
+    .social-link {
         border-width: 2px;
     }
 }
