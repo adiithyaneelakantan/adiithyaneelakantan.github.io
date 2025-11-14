@@ -1,4 +1,36 @@
 /* ========================================
+   CSS Variables - Theme Colors
+   ======================================== */
+
+:root {
+    --bg-primary: #FFFFFF;
+    --bg-secondary: #F9F9F9;
+    --text-primary: #000000;
+    --text-secondary: #666666;
+    --text-tertiary: #999999;
+    --accent-primary: #A20597;
+    --accent-hover: #8A047E;
+    --border-color: #E0E0E0;
+    --border-light: #F0F0F0;
+    --shadow-light: rgba(0, 0, 0, 0.05);
+    --shadow-medium: rgba(0, 0, 0, 0.1);
+}
+
+[data-theme="dark"] {
+    --bg-primary: #1A1A1A;
+    --bg-secondary: #242424;
+    --text-primary: #E8E8E8;
+    --text-secondary: #B0B0B0;
+    --text-tertiary: #888888;
+    --accent-primary: #D946A5;
+    --accent-hover: #FF6BCC;
+    --border-color: #333333;
+    --border-light: #2A2A2A;
+    --shadow-light: rgba(0, 0, 0, 0.3);
+    --shadow-medium: rgba(0, 0, 0, 0.5);
+}
+
+/* ========================================
    CSS Reset & Base Styles
    ======================================== */
 
@@ -16,10 +48,11 @@ body {
     font-family: Helvetica, Arial, sans-serif;
     font-size: 12px;
     line-height: 1.6;
-    color: #000000;
-    background-color: #FFFFFF;
+    color: var(--text-primary);
+    background-color: var(--bg-primary);
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 /* ========================================
@@ -29,21 +62,22 @@ body {
 h1, h2, h3, h4, h5, h6 {
     font-weight: bold;
     line-height: 1.3;
-    color: #000000;
+    color: var(--text-primary);
 }
 
 a {
-    color: #A20597;
+    color: var(--accent-primary);
     text-decoration: underline;
-    transition: opacity 0.2s ease;
+    transition: opacity 0.2s ease, color 0.3s ease;
 }
 
 a:hover {
     opacity: 0.7;
+    color: var(--accent-hover);
 }
 
 a:focus {
-    outline: 2px solid #A20597;
+    outline: 2px solid var(--accent-primary);
     outline-offset: 2px;
 }
 
@@ -56,10 +90,11 @@ a:focus {
     top: 0;
     left: 0;
     right: 0;
-    background-color: #FFFFFF;
-    border-bottom: 1px solid #E0E0E0;
+    background-color: var(--bg-primary);
+    border-bottom: 1px solid var(--border-color);
     z-index: 1000;
     padding: 16px 0;
+    transition: background-color 0.3s ease, border-color 0.3s ease;
 }
 
 .navbar-content {
@@ -74,29 +109,63 @@ a:focus {
 .navbar-left .site-title {
     font-size: 18px;
     font-weight: bold;
-    color: #000000;
+    color: var(--text-primary);
     text-decoration: none;
 }
 
 .navbar-left .site-title:hover {
-    color: #A20597;
+    color: var(--accent-primary);
+}
+
+.navbar-right {
+    display: flex;
+    align-items: center;
+    gap: 12px;
 }
 
 .navbar-right .nav-link {
     font-size: 14px;
     font-weight: 500;
-    color: #A20597;
+    color: var(--accent-primary);
     text-decoration: none;
     padding: 8px 16px;
-    border: 1px solid #A20597;
+    border: 1px solid var(--accent-primary);
     border-radius: 4px;
     transition: all 0.2s ease;
 }
 
 .navbar-right .nav-link:hover {
-    background-color: #A20597;
+    background-color: var(--accent-primary);
     color: #FFFFFF;
     opacity: 1;
+}
+
+/* Theme Toggle Button */
+.theme-toggle {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 4px;
+    transition: background-color 0.2s ease;
+}
+
+.theme-toggle:hover {
+    background-color: var(--bg-secondary);
+}
+
+.theme-toggle .theme-icon {
+    width: 20px;
+    height: 20px;
+    color: var(--text-primary);
+    transition: transform 0.3s ease;
+}
+
+.theme-toggle:hover .theme-icon {
+    transform: rotate(15deg);
 }
 
 /* ========================================
@@ -140,7 +209,7 @@ a:focus {
     aspect-ratio: 1;
     overflow: hidden;
     border-radius: 4px;
-    background-color: #F5F5F5;
+    background-color: var(--bg-secondary);
     position: relative;
 }
 
@@ -157,7 +226,7 @@ a:focus {
     display: flex;
     align-items: center;
     justify-content: center;
-    background: linear-gradient(135deg, #A20597 0%, #D946A6 100%);
+    background: linear-gradient(135deg, var(--accent-primary) 0%, var(--accent-hover) 100%);
     color: #FFFFFF;
     font-size: 48px;
     font-weight: bold;
@@ -169,13 +238,13 @@ a:focus {
     align-items: center;
     gap: 8px;
     font-size: 13px;
-    color: #000000;
+    color: var(--text-primary);
 }
 
 .icon {
     width: 18px;
     height: 18px;
-    color: #A20597;
+    color: var(--accent-primary);
     flex-shrink: 0;
 }
 
@@ -188,7 +257,7 @@ a:focus {
 
 .contact-link {
     font-size: 12px;
-    color: #A20597;
+    color: var(--accent-primary);
     word-break: break-word;
 }
 
@@ -205,24 +274,24 @@ a:focus {
     align-items: center;
     gap: 10px;
     font-size: 13px;
-    color: #A20597;
+    color: var(--accent-primary);
     text-decoration: none;
     padding: 8px 12px;
-    border: 1px solid #E0E0E0;
+    border: 1px solid var(--border-color);
     border-radius: 4px;
     transition: all 0.2s ease;
 }
 
 .social-link:hover {
-    background-color: #F9F9F9;
-    border-color: #A20597;
+    background-color: var(--bg-secondary);
+    border-color: var(--accent-primary);
     opacity: 1;
 }
 
 .social-icon {
     width: 20px;
     height: 20px;
-    fill: #A20597;
+    fill: var(--accent-primary);
     flex-shrink: 0;
 }
 
@@ -244,16 +313,16 @@ a:focus {
 .section-heading {
     font-size: 20px;
     font-weight: bold;
-    color: #000000;
+    color: var(--text-primary);
     margin-bottom: 16px;
     padding-bottom: 8px;
-    border-bottom: 2px solid #A20597;
+    border-bottom: 2px solid var(--accent-primary);
 }
 
 .section-text {
     font-size: 13px;
     line-height: 1.7;
-    color: #000000;
+    color: var(--text-primary);
     margin-bottom: 12px;
 }
 
@@ -271,7 +340,7 @@ a:focus {
     display: flex;
     gap: 16px;
     padding-left: 8px;
-    border-left: 2px solid #E0E0E0;
+    border-left: 2px solid var(--border-color);
     padding-bottom: 8px;
     position: relative;
 }
@@ -283,14 +352,14 @@ a:focus {
     top: 6px;
     width: 10px;
     height: 10px;
-    background-color: #A20597;
+    background-color: var(--accent-primary);
     border-radius: 50%;
 }
 
 .timeline-date {
     font-size: 12px;
     font-weight: bold;
-    color: #000000;
+    color: var(--text-primary);
     min-width: 120px;
     flex-shrink: 0;
 }
@@ -298,7 +367,7 @@ a:focus {
 .timeline-content {
     font-size: 12px;
     line-height: 1.6;
-    color: #000000;
+    color: var(--text-primary);
 }
 
 /* ========================================
@@ -312,11 +381,11 @@ a:focus {
 .publication-text {
     font-size: 12px;
     line-height: 1.7;
-    color: #000000;
+    color: var(--text-primary);
 }
 
 .publication-link {
-    color: #A20597;
+    color: var(--accent-primary);
     font-weight: 500;
     white-space: nowrap;
 }
@@ -328,7 +397,7 @@ a:focus {
 .project {
     margin-bottom: 32px;
     padding-bottom: 24px;
-    border-bottom: 1px solid #E0E0E0;
+    border-bottom: 1px solid var(--border-color);
 }
 
 .project:last-child {
@@ -347,19 +416,19 @@ a:focus {
 .project-title {
     font-size: 15px;
     font-weight: bold;
-    color: #000000;
+    color: var(--text-primary);
 }
 
 .project-date {
     font-size: 11px;
-    color: #666666;
+    color: var(--text-secondary);
     font-style: italic;
 }
 
 .project-description {
     font-size: 12px;
     line-height: 1.7;
-    color: #000000;
+    color: var(--text-primary);
     margin-bottom: 10px;
 }
 
@@ -369,7 +438,7 @@ a:focus {
 
 .project-link {
     font-size: 12px;
-    color: #A20597;
+    color: var(--accent-primary);
     font-weight: 500;
 }
 
@@ -380,7 +449,7 @@ a:focus {
 .experience {
     margin-bottom: 32px;
     padding-bottom: 24px;
-    border-bottom: 1px solid #E0E0E0;
+    border-bottom: 1px solid var(--border-color);
 }
 
 .experience:last-child {
@@ -399,19 +468,19 @@ a:focus {
 .experience-title {
     font-size: 15px;
     font-weight: bold;
-    color: #000000;
+    color: var(--text-primary);
     margin-bottom: 4px;
 }
 
 .experience-company {
     font-size: 13px;
-    color: #000000;
+    color: var(--text-primary);
     font-weight: 500;
 }
 
 .experience-date {
     font-size: 11px;
-    color: #666666;
+    color: var(--text-secondary);
     font-style: italic;
     flex-shrink: 0;
 }
@@ -427,7 +496,7 @@ a:focus {
 .experience-list li {
     font-size: 12px;
     line-height: 1.7;
-    color: #000000;
+    color: var(--text-primary);
     padding-left: 4px;
 }
 
@@ -438,13 +507,13 @@ a:focus {
 .footer {
     margin-top: 48px;
     padding-top: 24px;
-    border-top: 1px solid #E0E0E0;
+    border-top: 1px solid var(--border-color);
     text-align: center;
 }
 
 .footer p {
     font-size: 11px;
-    color: #666666;
+    color: var(--text-secondary);
 }
 
 /* ========================================
@@ -545,14 +614,14 @@ a:focus {
     }
 
     a {
-        color: #000000;
+        color: var(--text-primary);
         text-decoration: none;
     }
 
     a[href]:after {
         content: " (" attr(href) ")";
         font-size: 10px;
-        color: #666666;
+        color: var(--text-secondary);
     }
 }
 
@@ -621,4 +690,12 @@ a:focus {
     .navbar-right .nav-link {
         border-width: 2px;
     }
+}
+
+/* ========================================
+   Update Item for Timeline
+   ======================================== */
+
+.update-item {
+    margin-bottom: 16px;
 }

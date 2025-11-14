@@ -6,6 +6,9 @@
 // Wait for DOM to be fully loaded
 document.addEventListener('DOMContentLoaded', function() {
     
+    // Initialize theme
+    initTheme();
+    
     // Smooth scroll for navigation links
     initSmoothScroll();
     
@@ -19,6 +22,41 @@ document.addEventListener('DOMContentLoaded', function() {
     initActiveLinkHighlight();
     
 });
+
+/**
+ * Initialize dark mode theme toggle
+ */
+function initTheme() {
+    const themeToggle = document.getElementById('theme-toggle');
+    const sunIcon = document.querySelector('.sun-icon');
+    const moonIcon = document.querySelector('.moon-icon');
+    const htmlElement = document.documentElement;
+    
+    // Check for saved theme preference or default to light mode
+    const currentTheme = localStorage.getItem('theme') || 'light';
+    htmlElement.setAttribute('data-theme', currentTheme);
+    
+    // Update icon visibility
+    updateThemeIcons(currentTheme);
+    
+    // Toggle theme on button click
+    themeToggle.addEventListener('click', function() {
+        const newTheme = htmlElement.getAttribute('data-theme') === 'light' ? 'dark' : 'light';
+        htmlElement.setAttribute('data-theme', newTheme);
+        localStorage.setItem('theme', newTheme);
+        updateThemeIcons(newTheme);
+    });
+    
+    function updateThemeIcons(theme) {
+        if (theme === 'dark') {
+            sunIcon.style.display = 'none';
+            moonIcon.style.display = 'block';
+        } else {
+            sunIcon.style.display = 'block';
+            moonIcon.style.display = 'none';
+        }
+    }
+}
 
 /**
  * Initialize smooth scrolling for anchor links
