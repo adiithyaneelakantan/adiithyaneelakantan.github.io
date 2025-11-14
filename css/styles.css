@@ -438,10 +438,55 @@ a:focus {
    Projects
    ======================================== */
 
+/* Project Filters */
+.project-filters {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 32px;
+}
+
+.filter-btn {
+    font-size: 12px;
+    padding: 8px 16px;
+    background-color: var(--bg-secondary);
+    color: var(--text-secondary);
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-weight: 500;
+}
+
+.filter-btn:hover {
+    background-color: var(--accent-primary);
+    color: #FFFFFF;
+    border-color: var(--accent-primary);
+    transform: translateY(-2px);
+}
+
+.filter-btn.active {
+    background-color: var(--accent-primary);
+    color: #FFFFFF;
+    border-color: var(--accent-primary);
+}
+
+/* Timeline Container */
+.timeline-container {
+    position: relative;
+}
+
 .project {
     margin-bottom: 32px;
     padding-bottom: 24px;
     border-bottom: 1px solid var(--border-color);
+    opacity: 1;
+    transform: translateY(0);
+    transition: opacity 0.4s ease, transform 0.4s ease;
+}
+
+.project.hidden {
+    display: none;
 }
 
 .project:last-child {

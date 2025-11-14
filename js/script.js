@@ -21,6 +21,9 @@ document.addEventListener('DOMContentLoaded', function() {
     // Add active link highlighting
     initActiveLinkHighlight();
     
+    // Initialize project filters
+    initProjectFilters();
+    
 });
 
 /**
@@ -279,6 +282,68 @@ function showCopyNotification(element) {
 
 // Initialize email copy functionality
 initEmailCopy();
+
+/**
+ * Initialize project filtering functionality
+ */
+function initProjectFilters() {
+    const filterButtons = document.querySelectorAll('.filter-btn');
+    const projects = document.querySelectorAll('.project[data-category]');
+    
+    if (!filterButtons.length || !projects.length) return;
+    
+    // Set initial ARIA states
+    filterButtons.forEach(button => {
+        button.setAttribute('role', 'button');
+        button.setAttribute('aria-pressed', button.classList.contains('active') ? 'true' : 'false');
+    });
+    
+    filterButtons.forEach(button => {
+        button.addEventListener('click', function() {
+            const category = this.getAttribute('data-category');
+            
+            // Update active state and ARIA on buttons
+            filterButtons.forEach(btn => {
+                btn.classList.remove('active');
+                btn.setAttribute('aria-pressed', 'false');
+            });
+            this.classList.add('active');
+            this.setAttribute('aria-pressed', 'true');
+            
+            // First fade out all projects
+            projects.forEach(project => {
+                project.style.opacity = '0';
+                project.style.transform = 'translateY(-10px)';
+            });
+            
+            // Then show/hide with proper display and staggered fade-in
+            setTimeout(() => {
+                projects.forEach((project, index) => {
+                    const projectCategory = project.getAttribute('data-category');
+                    
+                    if (category === 'all' || projectCategory === category) {
+                        project.classList.remove('hidden');
+                        // Stagger fade-in animation
+                        setTimeout(() => {
+                            project.style.opacity = '1';
+                            project.style.transform = 'translateY(0)';
+                        }, index * 80);
+                    } else {
+                        project.classList.add('hidden');
+                    }
+                });
+            }, 200);
+        });
+        
+        // Add keyboard support
+        button.addEventListener('keydown', function(e) {
+            if (e.key === 'Enter' || e.key === ' ') {
+                e.preventDefault();
+                this.click();
+            }
+        });
+    });
+}
 
 /**
  * Console welcome message

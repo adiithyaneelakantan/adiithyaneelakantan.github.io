@@ -164,7 +164,18 @@
             <section id="projects" class="content-section">
                 <h2 class="section-heading">Academic Projects</h2>
                 
-                <div class="project">
+                <!-- Category Filter -->
+                <div class="project-filters">
+                    <button class="filter-btn active" data-category="all" data-testid="filter-all">All Projects</button>
+                    <button class="filter-btn" data-category="aiot" data-testid="filter-aiot">AIoT</button>
+                    <button class="filter-btn" data-category="nlp" data-testid="filter-nlp">NLP</button>
+                    <button class="filter-btn" data-category="cv" data-testid="filter-cv">Computer Vision</button>
+                    <button class="filter-btn" data-category="ml" data-testid="filter-ml">Machine Learning</button>
+                </div>
+
+                <!-- Timeline Container -->
+                <div class="timeline-container">
+                <div class="project" data-category="aiot">
                     <div class="project-header">
                         <h3 class="project-title">AIoT Smart Classroom System</h3>
                         <span class="project-date">January - April 2025</span>
@@ -177,7 +188,7 @@
                     </p>
                 </div>
 
-                <div class="project">
+                <div class="project" data-category="nlp">
                     <div class="project-header">
                         <h3 class="project-title">Mental Health Categories on Reddit</h3>
                         <span class="project-date">August - December 2024</span>
@@ -190,7 +201,7 @@
                     </p>
                 </div>
 
-                <div class="project">
+                <div class="project" data-category="nlp">
                     <div class="project-header">
                         <h3 class="project-title">Movie Review Analysis for Letterboxd Data</h3>
                         <span class="project-date">August - December 2024</span>
@@ -200,7 +211,7 @@
                     </p>
                 </div>
 
-                <div class="project">
+                <div class="project" data-category="ml">
                     <div class="project-header">
                         <h3 class="project-title">AI-Driven Gomoku Algorithm</h3>
                         <span class="project-date">August - December 2023</span>
@@ -210,7 +221,7 @@
                     </p>
                 </div>
 
-                <div class="project">
+                <div class="project" data-category="cv">
                     <div class="project-header">
                         <h3 class="project-title">Detection of Melanoma using Computer Vision</h3>
                         <span class="project-date">January - June 2023 (Capstone Project, VIT)</span>
@@ -223,7 +234,7 @@
                     </p>
                 </div>
 
-                <div class="project">
+                <div class="project" data-category="cv">
                     <div class="project-header">
                         <h3 class="project-title">Vehicle Detection using Mask R-CNN</h3>
                         <span class="project-date">July - December 2022</span>
@@ -231,6 +242,7 @@
                     <p class="project-description">
                         Designed and trained a Mask R-CNN model for vehicle and pedestrian detection across 25,000+ test images.
                     </p>
+                </div>
                 </div>
             </section>
 
