@@ -1,0 +1,6 @@
+To add your profile photo:
+1. Add your professional headshot as "profile-photo.jpg" in this assets folder
+2. Recommended: Square format, 500x500px or larger
+3. Supported formats: JPG, PNG
+
+If no photo is provided, the website will show a placeholder with your initials.

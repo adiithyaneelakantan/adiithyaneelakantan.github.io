@@ -1,0 +1,596 @@
+/* ========================================
+   CSS Reset & Base Styles
+   ======================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Helvetica, Arial, sans-serif;
+    font-size: 12px;
+    line-height: 1.6;
+    color: #000000;
+    background-color: #FFFFFF;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* ========================================
+   Typography
+   ======================================== */
+
+h1, h2, h3, h4, h5, h6 {
+    font-weight: bold;
+    line-height: 1.3;
+    color: #000000;
+}
+
+a {
+    color: #A20597;
+    text-decoration: underline;
+    transition: opacity 0.2s ease;
+}
+
+a:hover {
+    opacity: 0.7;
+}
+
+a:focus {
+    outline: 2px solid #A20597;
+    outline-offset: 2px;
+}
+
+/* ========================================
+   Navigation Bar
+   ======================================== */
+
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background-color: #FFFFFF;
+    border-bottom: 1px solid #E0E0E0;
+    z-index: 1000;
+    padding: 16px 0;
+}
+
+.navbar-content {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 32px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navbar-left .site-title {
+    font-size: 18px;
+    font-weight: bold;
+    color: #000000;
+    text-decoration: none;
+}
+
+.navbar-left .site-title:hover {
+    color: #A20597;
+}
+
+.navbar-right .nav-link {
+    font-size: 14px;
+    font-weight: 500;
+    color: #A20597;
+    text-decoration: none;
+    padding: 8px 16px;
+    border: 1px solid #A20597;
+    border-radius: 4px;
+    transition: all 0.2s ease;
+}
+
+.navbar-right .nav-link:hover {
+    background-color: #A20597;
+    color: #FFFFFF;
+    opacity: 1;
+}
+
+/* ========================================
+   Main Container
+   ======================================== */
+
+.container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding-top: 72px;
+    display: flex;
+    gap: 48px;
+    padding-left: 32px;
+    padding-right: 32px;
+}
+
+/* ========================================
+   Sidebar - Fixed
+   ======================================== */
+
+.sidebar {
+    width: 30%;
+    min-width: 280px;
+    max-width: 380px;
+    position: sticky;
+    top: 88px;
+    align-self: flex-start;
+    height: calc(100vh - 104px);
+    overflow-y: auto;
+}
+
+.sidebar-content {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+/* Profile Photo */
+.profile-photo {
+    width: 100%;
+    aspect-ratio: 1;
+    overflow: hidden;
+    border-radius: 4px;
+    background-color: #F5F5F5;
+    position: relative;
+}
+
+.profile-photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.profile-placeholder {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, #A20597 0%, #D946A6 100%);
+    color: #FFFFFF;
+    font-size: 48px;
+    font-weight: bold;
+}
+
+/* Info Item */
+.info-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 13px;
+    color: #000000;
+}
+
+.icon {
+    width: 18px;
+    height: 18px;
+    color: #A20597;
+    flex-shrink: 0;
+}
+
+/* Contact Section */
+.contact-section {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.contact-link {
+    font-size: 12px;
+    color: #A20597;
+    word-break: break-word;
+}
+
+/* Social Links */
+.social-links {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-top: 8px;
+}
+
+.social-link {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 13px;
+    color: #A20597;
+    text-decoration: none;
+    padding: 8px 12px;
+    border: 1px solid #E0E0E0;
+    border-radius: 4px;
+    transition: all 0.2s ease;
+}
+
+.social-link:hover {
+    background-color: #F9F9F9;
+    border-color: #A20597;
+    opacity: 1;
+}
+
+.social-icon {
+    width: 20px;
+    height: 20px;
+    fill: #A20597;
+    flex-shrink: 0;
+}
+
+/* ========================================
+   Main Content - Scrollable
+   ======================================== */
+
+.content {
+    flex: 1;
+    min-width: 0;
+    padding-bottom: 64px;
+}
+
+/* Content Sections */
+.content-section {
+    margin-bottom: 48px;
+}
+
+.section-heading {
+    font-size: 20px;
+    font-weight: bold;
+    color: #000000;
+    margin-bottom: 16px;
+    padding-bottom: 8px;
+    border-bottom: 2px solid #A20597;
+}
+
+.section-text {
+    font-size: 13px;
+    line-height: 1.7;
+    color: #000000;
+    margin-bottom: 12px;
+}
+
+/* ========================================
+   Timeline (Updates Section)
+   ======================================== */
+
+.timeline {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.timeline-item {
+    display: flex;
+    gap: 16px;
+    padding-left: 8px;
+    border-left: 2px solid #E0E0E0;
+    padding-bottom: 8px;
+    position: relative;
+}
+
+.timeline-item::before {
+    content: '';
+    position: absolute;
+    left: -6px;
+    top: 6px;
+    width: 10px;
+    height: 10px;
+    background-color: #A20597;
+    border-radius: 50%;
+}
+
+.timeline-date {
+    font-size: 12px;
+    font-weight: bold;
+    color: #000000;
+    min-width: 120px;
+    flex-shrink: 0;
+}
+
+.timeline-content {
+    font-size: 12px;
+    line-height: 1.6;
+    color: #000000;
+}
+
+/* ========================================
+   Publications
+   ======================================== */
+
+.publication {
+    margin-bottom: 16px;
+}
+
+.publication-text {
+    font-size: 12px;
+    line-height: 1.7;
+    color: #000000;
+}
+
+.publication-link {
+    color: #A20597;
+    font-weight: 500;
+    white-space: nowrap;
+}
+
+/* ========================================
+   Projects
+   ======================================== */
+
+.project {
+    margin-bottom: 32px;
+    padding-bottom: 24px;
+    border-bottom: 1px solid #E0E0E0;
+}
+
+.project:last-child {
+    border-bottom: none;
+}
+
+.project-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-bottom: 12px;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.project-title {
+    font-size: 15px;
+    font-weight: bold;
+    color: #000000;
+}
+
+.project-date {
+    font-size: 11px;
+    color: #666666;
+    font-style: italic;
+}
+
+.project-description {
+    font-size: 12px;
+    line-height: 1.7;
+    color: #000000;
+    margin-bottom: 10px;
+}
+
+.project-link-text {
+    margin-top: 8px;
+}
+
+.project-link {
+    font-size: 12px;
+    color: #A20597;
+    font-weight: 500;
+}
+
+/* ========================================
+   Experience
+   ======================================== */
+
+.experience {
+    margin-bottom: 32px;
+    padding-bottom: 24px;
+    border-bottom: 1px solid #E0E0E0;
+}
+
+.experience:last-child {
+    border-bottom: none;
+}
+
+.experience-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 12px;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.experience-title {
+    font-size: 15px;
+    font-weight: bold;
+    color: #000000;
+    margin-bottom: 4px;
+}
+
+.experience-company {
+    font-size: 13px;
+    color: #000000;
+    font-weight: 500;
+}
+
+.experience-date {
+    font-size: 11px;
+    color: #666666;
+    font-style: italic;
+    flex-shrink: 0;
+}
+
+.experience-list {
+    list-style-position: outside;
+    margin-left: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.experience-list li {
+    font-size: 12px;
+    line-height: 1.7;
+    color: #000000;
+    padding-left: 4px;
+}
+
+/* ========================================
+   Footer
+   ======================================== */
+
+.footer {
+    margin-top: 48px;
+    padding-top: 24px;
+    border-top: 1px solid #E0E0E0;
+    text-align: center;
+}
+
+.footer p {
+    font-size: 11px;
+    color: #666666;
+}
+
+/* ========================================
+   Responsive Design - Mobile
+   ======================================== */
+
+@media (max-width: 768px) {
+    .navbar-content {
+        padding: 0 20px;
+    }
+
+    .navbar-left .site-title {
+        font-size: 16px;
+    }
+
+    .navbar-right .nav-link {
+        font-size: 12px;
+        padding: 6px 12px;
+    }
+
+    .container {
+        flex-direction: column;
+        padding-left: 20px;
+        padding-right: 20px;
+        padding-top: 80px;
+        gap: 32px;
+    }
+
+    .sidebar {
+        width: 100%;
+        max-width: 100%;
+        position: static;
+        height: auto;
+    }
+
+    .sidebar-content {
+        max-width: 400px;
+        margin: 0 auto;
+    }
+
+    .profile-photo {
+        max-width: 250px;
+        margin: 0 auto;
+    }
+
+    .social-links {
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+
+    .social-link {
+        flex: 1;
+        min-width: 140px;
+        justify-content: center;
+    }
+
+    .content {
+        padding-bottom: 40px;
+    }
+
+    .section-heading {
+        font-size: 18px;
+    }
+
+    .timeline-item {
+        flex-direction: column;
+        gap: 4px;
+    }
+
+    .timeline-date {
+        min-width: auto;
+    }
+
+    .project-header,
+    .experience-header {
+        flex-direction: column;
+        gap: 4px;
+    }
+}
+
+/* ========================================
+   Print Styles
+   ======================================== */
+
+@media print {
+    .navbar {
+        position: static;
+        border-bottom: none;
+    }
+
+    .container {
+        padding-top: 0;
+    }
+
+    .sidebar {
+        position: static;
+        page-break-inside: avoid;
+    }
+
+    a {
+        color: #000000;
+        text-decoration: none;
+    }
+
+    a[href]:after {
+        content: " (" attr(href) ")";
+        font-size: 10px;
+        color: #666666;
+    }
+}
+
+/* ========================================
+   Accessibility
+   ======================================== */
+
+/* Focus visible for keyboard navigation */
+*:focus-visible {
+    outline: 2px solid #A20597;
+    outline-offset: 2px;
+}
+
+/* Reduced motion for users who prefer it */
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+
+    * {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+    .navbar {
+        border-bottom-width: 2px;
+    }
+
+    .section-heading {
+        border-bottom-width: 3px;
+    }
+
+    .social-link,
+    .navbar-right .nav-link {
+        border-width: 2px;
+    }
+}
