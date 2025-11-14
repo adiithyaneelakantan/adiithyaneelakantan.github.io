@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Academic Projects - Adithya Neelakantan">
+    <title>Academic Projects - Adithya Neelakantan</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <!-- Simple Top Navigation -->
+    <div class="top-nav">
+        <a href="index.html" class="top-nav-name">Adithya Neelakantan</a>
+        <div class="top-nav-links">
+            <a href="projects.html" class="top-nav-link">Academic Projects</a>
+            <a href="experience.html" class="top-nav-link">Experience</a>
+            <a href="pdfs/Adithya-Resume-Research.pdf" target="_blank" rel="noopener noreferrer" class="top-nav-link">Resume</a>
+        </div>
+    </div>
+
+    <!-- Main Container -->
+    <div class="container">
+        <!-- Left Sidebar - Fixed -->
+        <aside class="sidebar" role="complementary">
+            <div class="sidebar-content">
+                <!-- Profile Photo -->
+                <div class="profile-photo">
+                    <img src="assets/profile-photo.jpg" alt="Adithya Neelakantan Profile Photo" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                    <div class="profile-placeholder" style="display:none;">
+                        <span>AN</span>
+                    </div>
+                </div>
+
+                <!-- Location -->
+                <div class="info-item">
+                    <svg class="icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z" />
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z" />
+                    </svg>
+                    <span>Portland, OR</span>
+                </div>
+
+                <!-- Contact Emails -->
+                <div class="contact-section">
+                    <a href="mailto:adithya.neelakantan2001@gmail.com" class="contact-link">adithya.neelakantan2001@gmail.com</a>
+                    <a href="mailto:aneelaka@syr.edu" class="contact-link">aneelaka@syr.edu</a>
+                </div>
+
+                <!-- Social Links -->
+                <div class="social-links">
+                    <a href="https://github.com/adiithyaneelakantan" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="GitHub Profile">GitHub</a>
+                    <a href="https://www.linkedin.com/in/adithyaneelakantan/" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="LinkedIn Profile">LinkedIn</a>
+                    <a href="https://www.instagram.com/adithya.neelakantan/" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="Instagram Profile">Instagram</a>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Main Content - Scrollable -->
+        <main class="content" role="main">
+            <!-- Academic Projects Section -->
+            <section id="projects" class="content-section">
+                <h2 class="section-heading">Academic Projects</h2>
+
+                <!-- Timeline Container -->
+                <div class="timeline-container">
+                <div class="project" data-category="aiot">
+                    <div class="project-header">
+                        <h3 class="project-title">AIoT Smart Classroom System</h3>
+                        <span class="project-date">January - April 2025</span>
+                    </div>
+                    <p class="project-description">
+                        AIoT-based smart education platform integrating RFID and Wi-Fi validation for secure, fraud-proof attendance tracking and AI-powered classroom assistance to enhance student engagement, prioritizing communication across systems working together in an ecosystem.
+                    </p>
+                    <p class="project-link-text">
+                        <a href="https://arxiv.org/abs/2510.26999" target="_blank" rel="noopener noreferrer" class="project-link">View Research Paper</a>
+                    </p>
+                </div>
+
+                <div class="project" data-category="nlp">
+                    <div class="project-header">
+                        <h3 class="project-title">Mental Health Categories on Reddit</h3>
+                        <span class="project-date">August - December 2024</span>
+                    </div>
+                    <p class="project-description">
+                        Applied LSTM and Structured Perceptron models to classify and analyze Reddit posts by mental health categories such as anxiety, depression, and suicidal ideation.
+                    </p>
+                    <p class="project-link-text">
+                        <a href="pdfs/NLP-Report-Mental-Health.pdf" target="_blank" rel="noopener noreferrer" class="project-link">View Report (PDF)</a>
+                    </p>
+                </div>
+
+                <div class="project" data-category="nlp">
+                    <div class="project-header">
+                        <h3 class="project-title">Movie Review Analysis for Letterboxd Data</h3>
+                        <span class="project-date">August - December 2024</span>
+                    </div>
+                    <p class="project-description">
+                        Performed multi-faceted analysis of Letterboxd movie reviews using Python and HuggingFace transformers, focusing on sentiment, genre, user engagement, sarcasm, and temporal patterns.
+                    </p>
+                </div>
+
+                <div class="project" data-category="ml">
+                    <div class="project-header">
+                        <h3 class="project-title">AI-Driven Gomoku Algorithm</h3>
+                        <span class="project-date">August - December 2023</span>
+                    </div>
+                    <p class="project-description">
+                        AI-based Gomoku game using the Minimax search algorithm with a custom heuristic evaluation function, considering immediate threats and multi-step future outcomes.
+                    </p>
+                </div>
+
+                <div class="project" data-category="cv">
+                    <div class="project-header">
+                        <h3 class="project-title">Detection of Melanoma using Computer Vision</h3>
+                        <span class="project-date">January - June 2023 (Capstone Project, VIT)</span>
+                    </div>
+                    <p class="project-description">
+                        Melanoma detection system using ResNet50 and EfficientNet CNNs, classifying over 50,000 dermoscopic images of skin lesions. Applied data augmentation for better model generalization.
+                    </p>
+                </div>
+
+                <div class="project" data-category="cv">
+                    <div class="project-header">
+                        <h3 class="project-title">Vehicle Detection using Mask R-CNN</h3>
+                        <span class="project-date">July - December 2022</span>
+                    </div>
+                    <p class="project-description">
+                        Designed and trained a Mask R-CNN model for vehicle and pedestrian detection across 25,000+ test images.
+                    </p>
+                </div>
+                </div>
+            </section>
+
+            <!-- Footer -->
+            <footer class="footer">
+                <p>Have a great day! ~A</p>
+            </footer>
+        </main>
+    </div>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
+
