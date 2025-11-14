@@ -123,7 +123,15 @@ a:focus {
     gap: 12px;
 }
 
-.navbar-right .nav-link {
+/* Resume Download Section */
+.resume-download {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 2px;
+}
+
+.resume-download .nav-link {
     font-size: 14px;
     font-weight: 500;
     color: var(--accent-primary);
@@ -132,12 +140,32 @@ a:focus {
     border: 1px solid var(--accent-primary);
     border-radius: 4px;
     transition: all 0.2s ease;
+    display: flex;
+    align-items: center;
+    gap: 6px;
 }
 
-.navbar-right .nav-link:hover {
+.resume-download .nav-link:hover {
     background-color: var(--accent-primary);
     color: #FFFFFF;
     opacity: 1;
+}
+
+.resume-download .nav-link:hover .download-icon {
+    color: #FFFFFF;
+}
+
+.download-icon {
+    width: 16px;
+    height: 16px;
+    color: var(--accent-primary);
+    transition: color 0.2s ease;
+}
+
+.resume-version {
+    font-size: 9px;
+    color: var(--text-tertiary);
+    white-space: nowrap;
 }
 
 /* Theme Toggle Button */
@@ -529,9 +557,26 @@ a:focus {
         font-size: 16px;
     }
 
-    .navbar-right .nav-link {
+    .navbar-right {
+        gap: 8px;
+    }
+
+    .resume-download .nav-link {
         font-size: 12px;
         padding: 6px 12px;
+    }
+
+    .resume-version {
+        font-size: 8px;
+    }
+
+    .theme-toggle {
+        padding: 6px;
+    }
+
+    .theme-toggle .theme-icon {
+        width: 18px;
+        height: 18px;
     }
 
     .container {
