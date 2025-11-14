@@ -168,6 +168,22 @@ a:focus {
     white-space: nowrap;
 }
 
+/* Secondary nav link */
+.nav-link-secondary {
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--text-primary);
+    text-decoration: none;
+    padding: 8px 16px;
+    border-radius: 4px;
+    transition: all 0.2s ease;
+}
+
+.nav-link-secondary:hover {
+    background-color: var(--bg-secondary);
+    opacity: 1;
+}
+
 /* Theme Toggle Button */
 .theme-toggle {
     background: none;
