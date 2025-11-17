@@ -49,7 +49,7 @@ This website is designed to be deployed on GitHub Pages.
 ├── assets/
 │   └── profile-photo.jpg  # Your profile photo
 ├── pdfs/
-│   ├── Adithya-Resume-Research.pdf
+│   ├── Adithya Resume research-1.pdf
 │   ├── NLP-Report-Mental-Health.pdf
 │   └── Melanoma-Detection-Poster.pdf
 └── README.md              # This file
@@ -123,7 +123,7 @@ To view the website locally:
 
 - Email: adithya.neelakantan2001@gmail.com
 - Email: aneelaka@syr.edu
-- GitHub: [@adiithyaneelakantan](https://github.com/adiithyaneelakantan)
+- GitHub: [@adithya-neelakantan](https://github.com/adithya-neelakantan)
 - LinkedIn: [adithyaneelakantan](https://www.linkedin.com/in/adithyaneelakantan/)
 - Instagram: [@adithya.neelakantan](https://www.instagram.com/adithya.neelakantan/)
 

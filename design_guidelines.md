@@ -36,7 +36,7 @@ A professional academic research portfolio website for Adithya Neelakantan, desi
 ### Top Navigation Bar
 - Fixed header spanning full width
 - Left aligned: "Adithya Neelakantan" (name/logo)
-- Right aligned: "Resume" link (linking to PDF: "Adithya Resume research.pdf")
+- Right aligned: "Resume" link (linking to PDF: "Adithya Resume research-1.pdf")
 - Clean, minimal design with subtle bottom border
 
 ### Two-Column Layout
@@ -45,12 +45,11 @@ A professional academic research portfolio website for Adithya Neelakantan, desi
 - Remains fixed during scroll
 - Contains:
   - Profile photo (square format) - use provided image: `2_1761261534032.jpg`
-  - Location with map pin icon: "Portland, OR"
-  - Contact emails (clickable):
+  - Contact emails (clickable, with icons matching accent color):
     - adithya.neelakantan@gmail.com
     - aneelaka@syr.edu
   - Social media links with icons:
-    - GitHub: https://github.com/adiithyaneelakantan
+    - GitHub: https://github.com/adithya-neelakantan
     - LinkedIn: https://www.linkedin.com/in/adithyaneelakantan/
     - Instagram: https://www.instagram.com/adithya.neelakantan/
 

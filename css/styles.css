@@ -212,13 +212,17 @@ a:focus {
 .contact-section {
     display: flex;
     flex-direction: column;
-    gap: 8px;
+    gap: 10px;
 }
 
 .contact-link {
     font-size: 16px;
     color: var(--accent-primary);
     word-break: break-word;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
 }
 
 /* Social Links */
@@ -234,10 +238,30 @@ a:focus {
     color: var(--accent-primary);
     text-decoration: none;
     transition: color 0.2s ease;
+    display: flex;
+    align-items: center;
+    gap: 10px;
 }
 
 .social-link:hover {
     color: var(--accent-hover);
+}
+
+.contact-link span,
+.social-link span {
+    text-decoration: underline;
+}
+
+.contact-icon,
+.social-icon {
+    width: 18px;
+    height: 18px;
+    color: var(--accent-primary);
+    flex-shrink: 0;
+}
+
+.social-icon path {
+    fill: currentColor;
 }
 
 /* ========================================
@@ -299,8 +323,8 @@ a:focus {
     align-items: flex-start;
     gap: 6px;
     position: relative;
-    padding-bottom: 24px;
-    margin-bottom: 24px;
+    padding-bottom: 16px;
+    margin-bottom: 16px;
 }
 
 .timeline-item-inline::before {

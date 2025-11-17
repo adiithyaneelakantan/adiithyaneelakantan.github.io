@@ -239,4 +239,4 @@ function initProjectFilters() {
  */
 console.log('%c👋 Welcome to my portfolio!', 'color: #A20597; font-size: 16px; font-weight: bold;');
 console.log('%cInterested in the code? Check it out on GitHub!', 'color: #666; font-size: 12px;');
-console.log('%chttps://github.com/adiithyaneelakantan', 'color: #A20597; font-size: 12px;');
+console.log('%chttps://github.com/adithya-neelakantan', 'color: #A20597; font-size: 12px;');
